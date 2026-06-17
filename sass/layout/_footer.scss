@@ -1,0 +1,128 @@
+@use "../abstracts" as *;
+@use "sass:color" as *;
+footer {
+    .mainFooter {
+        background: $colorDarkGray;
+
+        .footerLogo {
+            margin-bottom: 1.5rem;
+
+            img {
+                width: 20rem;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        p {
+            color: #cdcdcd;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                &:not(:last-child) {
+                    border-bottom: 1px solid #807d7d;
+                }
+
+                a {
+                    color: #cdcdcd;
+                    text-decoration: none;
+                    padding: 1rem 0;
+                    display: block;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $colorWhite;
+                    }
+                }
+            }
+        }
+
+        .gettouch {
+            li {
+                display: flex;
+                align-items: baseline;
+                gap: 1rem;
+
+                &:last-child {
+                    color: #cdcdcd;
+                    padding-top: 1rem;
+                }
+
+                i {
+                    display: inline-block;
+                    color: #cdcdcd;
+                    line-height: 1;
+                }
+            }
+        }
+
+        .fWidget {
+            color: $colorWhite;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 2rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                background: $colorWhite;
+                height: 4px;
+                width: 10rem;
+                position: absolute;
+                border-radius: 3rem;
+                bottom: -1.5rem;
+                left: 0;
+            }
+
+            margin-bottom: 4rem;
+        }
+    }
+
+    .bottomFooter {
+        background: scale($colorDarkGray, $lightness: -20%);;
+        padding: 2rem 0;
+
+        p {
+            color: #cdcdcd;
+            margin-bottom: 0;
+            font-size: 1.4rem;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            li {
+                position: relative;
+
+                &:not(:last-child) {
+                    &::after {
+                        content: "|";
+                        position: absolute;
+                        right: -7px;
+                        color: #cdcdcd;
+                        font-weight: 100;
+                    }
+                }
+
+                a {
+                    color: #cdcdcd;
+                    font-size: 1.2rem;
+                    padding: 0 0.5rem;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $colorWhite;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Tara | Our Gallery</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+    <!-- Vendor StyleSheets -->
+    <link rel="stylesheet" href="assets/vendor/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendor/css/fancybox.min.css">
+    <script src="assets/js/myMenu.js"></script>
+
+    <!-- Theme StyleSheet -->
+    <link rel="stylesheet" href="assets/css/main.min.css">
+</head>
+
+<body>
+    <header>
+        <script>mainHeader()</script>
+    </header>
+    <main>
+        <section class="innerHeader">
+            <div class="container">
+                <h6 class="subHeading"><i class="fa-solid fa-images"></i> Our Moments</h6>
+                <div class="innerHeroContent">
+                    <h1><span>Analysis</span></h1>
+                    <p>Capturing the joy of learning and the spirit of our community.</p>
+                </div>
+            </div>
+        </section>
+        <section class="fundamentalAnalysis m-top">
+            <div class="container">
+                <p><strong>P/E Ratio = </strong>Current Market Price (CMP)/ Earning Per Share (EPS)</p>
+                <p><strong>CMP : </strong> It is a Live value of any stock and can be found on any Website </p>
+                <p><strong>EPS : </strong> It is find in P&L Statement or in Financial Reports.</p>
+                <p>Suppose <strong>Company X</strong> Present Market Price 500 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                <p>And EPS of last 12 month is 25 <i class="fa-solid fa-indian-rupee-sign"></i></p>
+                <p><strong><span id="cmp">500</span> / <span id="eps">25</span> = <span id="peRatio"></span></strong></p>
+                <p><strong>इसका क्या मतलब है? </strong>P/E अनुपात 20 होने का मतलब है कि निवेशक कंपनी द्वारा कमाए गए प्रत्येक ₹1 के लिए ₹20 का भुगतान करने को तैयार हैं।</p>
+                <p>ध्यान रखने योग्य बातें:</p>
+                <ul class="primaryList">
+                    <li>TTM P/E: अक्सर इस्तेमाल होने वाला P/E पिछले बारह महीनों (Trailing Twelve Months - TTM) की कमाई पर आधारित होता है।</li>
+                    <li>Forward P/E: कभी-कभी विश्लेषक अगले बारह महीनों के अनुमानित मुनाफे (Forward Earnings) का उपयोग करके P/E निकालते हैं, लेकिन यह अनुमानित होता है।</li>
+                    <li>वेबसाइट पर उपलब्ध: आपको आमतौर पर यह गणना मैन्युअल रूप से करने की आवश्यकता नहीं होती है, क्योंकि लगभग सभी स्टॉक रिसर्च वेबसाइटें और ट्रेडिंग प्लेटफॉर्म स्वचालित रूप से P/E अनुपात की गणना करके दिखाते हैं।</li>
+                </ul>
+                <p>प्रति शेयर आय (EPS - Earnings Per Share) यह दर्शाता है कि कंपनी ने अपने हर एक शेयर पर कितना शुद्ध मुनाफा कमाया है। इसे निकालने का तरीका नीचे दिया गया है: EPS निकालने का सूत्र (Formula):</p>
+                <p><strong>EPS = </strong>Net Profit - Preferred Dividend / Total Number of Outstanding Shares</p>
+                <p>आसान भाषा में: कुल मुनाफा ÷ कुल शेयरों की संख्या। उदाहरण के साथ समझें (Example): मान लीजिए एक कंपनी "ABC लिमिटेड" है:शुद्ध लाभ (Net Profit): ₹1,00,00,000 (1 करोड़ रुपये)कुल बकाया शेयर (Total Shares): 10,00,000 (10 लाख शेयर) गणना:</p>
+                <p><strong>1,00,00,000 / 10,00,000 = 10</strong>इसका मतलब है कि कंपनी ने अपने प्रत्येक शेयर पर ₹10 का मुनाफा कमाया है।</p> EPS निकालने के लिए जरूरी डेटा कहाँ से लें? आपको गणना करने के लिए डेटा कंपनी की Annual Report या वित्तीय वेबसाइटों से मिल जाएगा: Net Profit: यह कंपनी के 'प्रॉफिट एंड लॉस स्टेटमेंट' (P&L Statement) में सबसे नीचे "Net Profit After Tax" के रूप में मिलता है।Total Outstanding Shares: यह 'बैलेंस शीट' में शेयर कैपिटल सेक्शन में या स्टॉक एक्सचेंज की वेबसाइट पर मिल जाता है। EPS के प्रकार: Trailing EPS: यह पिछले 12 महीनों के वास्तविक मुनाफे पर आधारित होता है।Forward EPS: यह भविष्य के अनुमानित मुनाफे पर आधारित होता है। महत्वपूर्ण टिप: निवेश के लिए हमेशा ऐसे स्टॉक चुनें जिनका EPS पिछले 3-5 वर्षों से लगातार बढ़ रहा हो। आप किसी भी कंपनी का EPS सीधे Screener.in या Google Finance पर जाकर देख सकते हैं।
+            </div>
+        </section>
+    </main>
+    <footer>
+        <script>myFooter()</script>
+    </footer>
+    <script>colorPicker()</script>
+    <!-- Vendor Script -->
+    <script src="assets/vendor/js/jquery.min.js"></script>
+    <script src="assets/vendor/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/js/owl.carousel.min.js"></script>
+    <script src="assets/vendor/js/perfect-scrollbar.min.js"></script>
+    <script src="assets/vendor/js/fancybox.min.js"></script>
+
+    <!-- Theme Script -->
+    <script src="assets/js/custom-scripts.js"></script>
+    <script>
+        let CMP = document.querySelector('#cmp').textContent;
+        let EPS = document.querySelector('#eps').textContent;
+        let PE = document.querySelector('#peRatio');
+        
+        let peValue = parseFloat(CMP) / parseFloat(EPS);
+        PE.textContent = peValue;
+    </script>
+</body>
+
+</html>

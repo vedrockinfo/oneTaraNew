@@ -1,0 +1,252 @@
+@use "../abstracts" as *;
+
+header {
+    .getiContact {
+        @include respond (maxWidth992) {
+            display: none;
+        }
+    }
+
+    .topHeader {
+        @include BgClr();
+        padding: 0.5rem;
+
+        .thRwo {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            .contact {
+                display: flex;
+                align-items: flex-end;
+                padding-left: 0;
+                margin-bottom: 0;
+
+                li {
+                    &:first-child {
+                        margin-right: 7.5px;
+                        padding-right: 7.5px;
+                        border-right: 2px solid $colorWhite;
+                    }
+                }
+            }
+        }
+
+        a {
+            color: $colorWhite;
+            transition: $transition;
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .socialMedia {
+            display: flex;
+            align-items: center;
+            padding-left: 0;
+            margin-bottom: 0;
+            gap: 2.5px;
+
+            li {
+                color: $colorWhite;
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+
+            a {
+                color: $colorWhite;
+                transition: $transition;
+                border: 2px solid $colorWhite;
+                width: 3.6rem;
+                transform: scale(0.9);
+                border-radius: 100%;
+                aspect-ratio: 1 / 1;
+                display: grid;
+                place-content: center;
+
+                &:hover {
+                    @include fontClr();
+                    background: $colorWhite;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .mainHeader {
+        padding: 1rem 0;
+        background: $colorWhite;
+
+        &.fixedTop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: $boxShadow;
+            top: -40px;
+            transform: translateY(40px);
+            transition: transform .3s;
+        }
+
+        .mhGrid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .mainMenu {
+                input[type="checkbox"] {
+                    display: none;
+
+                    &:checked {
+                        &+.togglingBar {
+                            span {
+                                &:nth-child(1) {
+                                    transform: rotate(45deg);
+                                }
+
+                                &:nth-child(2) {
+                                    display: none;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(-45deg);
+                                }
+                            }
+
+                            &+.nav-menu {
+                                transform: translateX(0);
+                            }
+                        }
+                    }
+                }
+
+                .togglingBar {
+                    cursor: pointer;
+
+                    @include respond (minWidth992) {
+                        display: none;
+                    }
+
+                    span {
+                        display: block;
+                        height: 2px;
+                        border-radius: 5px;
+                        width: 3rem;
+                        @include BgClr();
+                        transition: $transition;
+
+                        &:nth-child(2) {
+                            margin: 8px 0;
+                        }
+                    }
+                }
+
+                .nav-menu {
+                    display: flex;
+                    align-items: flex-end;
+                    margin-bottom: 0;
+                    padding-left: 0;
+
+                    @include respond (maxWidth992) {
+                        position: fixed;
+                        z-index: 999;
+                        text-align: left;
+                        left: 0;
+                        top: 0;
+                        display: block;
+                        background: $colorWhite;
+                        height: 100%;
+                        width: 30rem;
+                        transform: translateX(-100%);
+                        transition: $transition;
+
+                        a {
+                            padding: 0.6rem 1rem;
+                            display: block;
+                        }
+                    }
+
+                    .nav-list {
+                        &.active a{
+                            @include fontClr();
+                        }
+                        a {
+                            color: $colorText;
+                            font-weight: 500;
+
+                            @include respond (minWidth1200) {
+                                padding: 4px 8px;
+                            }
+
+
+                            @media screen and (min-width:992.1px) and (max-width:1199.9px) {
+                                padding: 4px 7px;
+                            }
+
+                            &:hover {
+                                @include fontClr();
+                            }
+                        }
+                    }
+                }
+            }
+
+            .linkWrapper {
+                a {
+                    @include BtnOne();
+                    padding: 6px 17px;
+                }
+            }
+        }
+    }
+
+    .taraLogo {
+        height: 5.5rem;
+        display: block;
+        position: relative;
+
+        &+span {
+            color: $colorBlack;
+
+            strong {
+                @include fontClr();
+            }
+        }
+
+        .tara {
+            position: relative;
+
+            &::before {
+                content: "";
+                background-size: contain;
+                width: 18.5rem;
+    height: 5.5rem;
+                position: absolute;
+                left: 0;
+                @include BgClr();
+                mask: url(../../images/tara-01.png) no-repeat center;
+                mask-size: contain;
+            }
+
+            &.center {
+                &::before {
+                    transform: translateX(-50%);
+                    left: 50%;
+                }
+            }
+        }
+
+        .one {
+            height: 44px;
+            transform: translate(41%, -1px);
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}

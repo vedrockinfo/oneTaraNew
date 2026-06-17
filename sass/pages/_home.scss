@@ -1,0 +1,347 @@
+@use "../abstracts" as *;
+.OneTara {
+    .abt-desc3{
+            @include respond (maxWidth992){
+                margin-top: 3rem;
+            }
+        }
+    .galleryGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        height: 100%;
+        @include respond (minWidth992){
+        grid-auto-rows: calc(100% / 2);
+        }
+
+        
+
+        &__item {
+            &:first-child {
+                grid-row: span 2;
+            }
+
+            a {
+                display: block;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background-color: #000;
+                    opacity: 0;
+                    z-index: 1;
+                    transition: $transition;
+                }
+
+                &:hover {
+                    img {
+                        filter: grayscale(1);
+                    }
+
+                    &::before {
+                        opacity: .6;
+                    }
+
+                    i {
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 1;
+                    }
+                }
+
+                i {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    color: #fff;
+                    font-size: 30px;
+                    transform: translate(-50%, -50%) scale(8);
+                    opacity: 0;
+                    z-index: 1;
+                    transition: $transition;
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .oneService {
+        &__item {
+            position: relative;
+            padding-left: 45px;
+            margin-top: 20px;
+
+            &:not(:last-child) {
+                i {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        height: calc(100% + 50px);
+                        width: 1px;
+                        left: 50%;
+                        margin-left: -.5px;
+                        z-index: -1;
+                        @include BgClr();
+                    }
+
+                    &::after {
+                        content: "";
+                        height: 10px;
+                        width: 10px;
+                        left: 50%;
+                        border-radius: 50%;
+                        border: 3px solid $colorWhite;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -5px;
+                        top: calc(100% + 24px);
+                        @include BgClr();
+                    }
+                }
+            }
+
+            i {
+                border: 1px solid;
+                line-height: 28px;
+                width: 30px;
+                position: absolute;
+                left: 0;
+                text-align: center;
+                font-style: normal;
+                height: 30px;
+                font-size: 15px;
+                font-weight: 600;
+                top: 0;
+                background-color: $colorWhite;
+                @include fontClr();
+            }
+        }
+    }
+}
+
+.missionVission {
+    background: #f7f6fc;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: url(../../images/parallax3.jpg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: overlay;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .vissionCard {
+        border-radius: 40px;
+        padding: 40px;
+        box-shadow: $boxShadowTwo;
+        position: relative;
+        background: $colorWhite;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            border-radius: inherit;
+            top: 0;
+            bottom: 0;
+            border-bottom: 1px solid;
+            opacity: 0;
+            @include borderClr();
+            transition: $transition;
+        }
+
+        &:hover{
+            &::before{
+                border-width: 10px;
+                opacity: 1;
+            }
+        }
+
+         .imgWrapper{
+                text-align: center;
+                img{
+                    width: 75px;
+                }
+            }
+
+        &__content {
+            .headingTertiary{
+                text-align: center;
+            }
+        }
+    }
+}
+
+.ourPurpose{
+    .purposeBox{
+        position: relative;
+        box-shadow: $boxShadowTwo;
+        border-bottom: 3px solid;
+        padding: 2rem 1.5rem;
+        @include borderClr();
+        .icon{
+            i{
+                @include fontClr();
+            font-size: 3rem;
+            }
+        }
+    }
+}
+.lovingMemories{
+    @include BgClr();
+    color: $colorWhite;
+    position: relative;
+    &::before{
+        content: "";
+        background-image: url(../../images/jagdish-bg-01.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+        opacity: 0.1;
+    }
+    .container{
+        position: relative;
+    }
+    .sectionTitle{
+        margin-bottom: 4rem;
+    }
+    .borderLine{
+        &::before{
+            filter: brightness(0) invert(1);
+        }
+    }
+    .subHeading{
+            background: $colorWhite;
+            @include fontClr();
+        }
+        .heads{
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            i{
+                font-size: 3rem;
+            }
+            .headingTertiary{
+                color: $colorWhite;
+            }
+        }
+   .imgWrapper{
+    overflow: hidden;
+    img{
+        transition: $transition;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+   }
+}
+
+.leadrshipSection{
+    .text-center{
+        a{
+            @include BtnOne();
+        }
+    }
+    
+    .leaderGrid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        @include respond (maxWidth1200){
+            gap: 2rem;
+        }
+        &__Item{
+
+        }
+        .steerMember{
+            .pic{
+            width: 10rem;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            margin: auto;
+            border-radius: 100%;
+            border: 2px solid;
+            @include borderClr();
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                padding: 3px;
+                object-position: top;
+            }
+            }
+            .details{
+                text-align: center;
+                .design{
+                    margin-bottom: 0;
+                    margin-top: 1.5rem;
+                }
+                .headingTertiary{
+                    margin-top: 0;
+                    font-size: $defaultFontSize;
+                }
+            }
+        }
+    }
+}
+.ourReach{
+    @include BgClr();
+    .counterRow{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .counterColumn{
+            text-align: center;
+            h2{
+                font-family: $fontPrimary;
+                color: $colorWhite;
+                position: relative;
+                font-weight: 800;
+                font-size: 4rem;
+            }
+            p{
+                color: $colorWhite;
+            }
+        }
+    }
+}
+.aboutTara{
+    .linkWrapper{
+        @include respond (maxWidth992){
+            text-align: center;
+        }
+        a{
+            @include BtnOne();
+        }
+    }
+}

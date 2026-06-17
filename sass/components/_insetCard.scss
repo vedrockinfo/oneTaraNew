@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+@use "../base/typography" as *;
+
+.teamGrid {
+    display: flex;
+    flex-wrap: wrap;
+
+    .teamMembers {
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding: 7.5px;
+
+        .teamCard {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 4rem 2rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                @include BgClr();
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 34%;
+                z-index: -1;
+            }
+
+            &::after {
+                content: "";
+                background-image: url("../../images/icons/vector.png");
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 34%;
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left;
+                mix-blend-mode: color-dodge;
+                opacity: 1;
+                transform: scaleY(-1);
+            }
+
+            .PicBox {
+                overflow: hidden;
+                width: 10rem;
+                aspect-ratio: 1 / 1;
+                margin: 0 auto 2rem;
+                border: 3px solid $colorWhite;
+                outline: 3px solid;
+                background: $colorWhite;
+                @include fontClr();
+                border-radius: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+
+            .PicDetials {
+                text-align: center;
+
+                .name {
+                    @extend .headingTertiary;
+                    margin-bottom: 1rem;
+                    line-height: 1;
+                }
+
+                .design {
+                    display: inline-block;
+                    border-top: 1px solid;
+                    border-bottom: 1px solid;
+                    padding: 3px 20px;
+                }
+            }
+        }
+    }
+}

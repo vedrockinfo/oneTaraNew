@@ -1,0 +1,188 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.heroSection {
+    position: relative;
+
+    .stickInfo {
+        position: absolute;
+        bottom: 7%;
+        border-radius: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        padding: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        z-index: 2;
+        background: $colorWhite;
+        gap: 1rem;
+        align-items: center;
+        transition: $transition;
+        animation: jump 0.5s infinite linear alternate-reverse;
+
+        .icon{
+            @include BgClr();
+            color: $colorWhite;
+            padding: 1rem;
+            border-radius: 1rem;
+            i{
+                transform: rotate(-30deg);
+                font-size: 2rem;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            text-align: center;
+            line-height: 1;
+            font-size: 1.4rem;
+        }
+
+        strong {
+            display: block;
+            font-size: 2.4rem;
+            @include fontClr();
+        }
+    }
+
+    &__Grid {
+        @include respond (minWidth992){
+        display: grid;
+            grid-template-columns: 50% 50%;
+        height: 44rem;
+        }
+    }
+
+    &__Item {
+        align-self: center;
+
+        .heroContent {
+            @include respond (minWidth992){
+                @include responsiveColumn;
+            }
+            @include respond (maxWidth992){
+                text-align: center;
+    padding: 3rem 1.5rem;
+            }
+
+            h6 {
+                font-size: 1.6rem;
+                font-weight: bold;
+                display: inline-block;
+                color: $colorWhite;
+                @include BgClr();
+                padding: 1rem 2rem;
+                letter-spacing: 1px;
+                font-size: 14px;
+                border-radius: 5rem;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            h2 {
+                font-size: 4.8rem;
+                font-weight: normal;
+                @include respond (maxWidth575){
+                    font-size: 2.8rem
+                }
+
+                span {
+                    @include fontClr();
+                }
+            }
+
+            h1 {
+                font-weight: 700;
+                font-family: $fontPrimary;
+                text-transform: uppercase;
+                font-size: 4.6rem;
+                @include fontClr();
+                @include respond (maxWidth575){
+                    font-size: 3rem;
+                }
+            }
+
+            .linkWrapper {
+                margin-top: 2rem;
+
+                a {
+                    @include BtnOne();
+                }
+            }
+        }
+
+        .imgWrapper {
+            position: relative;
+            height: 44rem;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            &::before {
+                content: "";
+                background-image: url(../../images/about-banner-bg.png);
+                background-position: center;
+                background-size: 100% 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+        }
+    }
+
+    .owl-dots {
+        margin-top: 2rem;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+        position: absolute;
+        bottom: 40%;
+        right: 2rem;
+    }
+
+    .owl-dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        position: relative;
+        background: $colorWhite !important;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid transparent;
+            border-radius: 100%;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.active {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 1.3px solid $colorWhite;
+                transform: scale(1.5);
+            }
+        }
+    }
+}

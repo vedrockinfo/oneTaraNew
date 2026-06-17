@@ -1,0 +1,107 @@
+@use "./variables" as *;
+@use "./responsive" as *;
+
+@mixin fontClr{
+    color: var(--theme-color);
+}
+@mixin BgClr{
+    background-color: var(--theme-color);
+}
+
+@mixin BgClrOnly{
+    background: var(--theme-color)!important;
+}
+
+@mixin fillClr{
+    fill: var(--theme-color);
+}
+
+@mixin borderClr{
+    border-color: var(--theme-color);
+}
+
+@mixin bgLight{
+  background: rgba($colorDarkGray, $alpha: 0.05);
+}
+@mixin BtnOne {
+    @include BgClr();
+  color: $colorWhite;
+  padding: 6px 25px;
+  border: 2px solid;
+  @include borderClr();
+  font-weight: 600;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+  transition: $transition;
+
+  @include respond (maxWidth768) {
+    padding: 5px 15px;
+    width: auto;
+  }
+
+  &:hover {
+    background: $colorWhite;
+    @include borderClr();
+    @include fontClr();
+  }
+}
+
+@mixin BtnTwo {
+  background: $colorWhite;
+  color: $colorBlack;
+  padding: 6px 25px;
+  border-radius: 50px;
+  border: 2px solid $colorWhite;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 600;
+  transition: $transition;
+
+  @include respond (maxWidth768) {
+    padding: 5px 15px;
+    width: auto;
+  }
+
+  &:hover {
+    background: transparent;
+    border-color: $colorWhite;
+    color: $colorWhite;
+  }
+}
+
+@mixin BtnThree {
+  background: $colorWhite;
+  @include fontClr();
+  padding: 6px 25px;
+  border-radius: 50px;
+  border: 2px solid;
+  @include borderClr();
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 600;
+  transition: $transition;
+
+  @include respond (maxWidth768) {
+    padding: 5px 15px;
+    width: auto;
+  }
+
+  &:hover {
+    @include BgClr();
+    @include borderClr();
+    color: $colorWhite;
+  }
+}
+
+@mixin responsiveColumn{
+  @media screen and (min-width:992px) {
+    width: 470px;
+    margin-left: auto;
+    padding-right: 3rem;
+  }
+  @media screen and (min-width:1200px) {
+    width: 570px;
+  }
+  
+}

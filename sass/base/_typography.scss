@@ -1,0 +1,151 @@
+@use "../abstracts" as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: $fontPrimary;
+  font-size: $defaultFontSize;
+  color: $colorText;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fontSecondary;
+}
+
+
+.heroHeading {
+  text-transform: uppercase;
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: $colorWhite;
+  line-height: 1.26;
+
+  @media screen and (min-width:1399.9px) {
+    font-size: 6.7rem;
+  }
+
+  @media screen and (min-width:992.1px) and (max-width:1199.9px) {
+    font-size: 3.6rem;
+  }
+
+  @include respond(maxWidth992) {
+    font-size: 3.6rem;
+  }
+
+  @include respond(maxWidth768) {
+    font-size: 3.6rem;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include respond(maxWidth575) {
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width:300px) {
+    font-size: 2.6rem;
+  }
+}
+
+.headingPrimary {
+    font-size: 4rem;
+    font-weight: bold;
+
+    span {
+        @include fontClr();
+    }
+}
+
+.headingSecondary {
+  line-height: 1.25em;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  @include fontClr();
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    border-radius: 10px;
+    @include BgClr();
+    bottom: -10px;
+    left: 0;
+  }
+}
+
+.headingTertiary{
+  line-height: 1;
+  text-transform: capitalize;
+  font-size: 20px;
+  margin: 1.5rem 0;
+  font-weight: 700;
+  @include fontClr();
+  @include respond(maxWidth992) {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  @include respond(maxWidth768) {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  @include respond(maxWidth575) {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+}
+
+.headingQuartery{
+  line-height: 1.25em;
+  margin-bottom: 20px;
+  padding: 1rem;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: normal;
+  @include fontClr();
+  @include respond(maxWidth992) {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  @include respond(maxWidth768) {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  @include respond(maxWidth575) {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
+
+.headingFive {
+  font-size: 1.6rem;
+  font-weight: 300;
+  @include fontClr();
+  text-align: center;
+}
+
+.subHeading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    @include BgClr();
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    color: $colorWhite;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}

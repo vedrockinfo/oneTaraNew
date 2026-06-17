@@ -1,0 +1,337 @@
+@use "../abstracts" as *;
+@use "sass:color" as *;
+
+.m-bottom {
+    margin-bottom: 7rem;
+
+    @include respond(maxWidth992) {
+        margin-bottom: 5rem;
+    }
+
+    @include respond(maxWidth768) {
+        margin-bottom: 3rem;
+    }
+}
+
+.m-top {
+    margin-top: 7rem;
+
+    @include respond(maxWidth992) {
+        margin-top: 5rem;
+    }
+
+    @include respond(maxWidth768) {
+        margin-top: 3rem;
+    }
+}
+
+.p-bottom {
+    padding-bottom: 7rem;
+
+    @include respond(maxWidth992) {
+        padding-bottom: 5rem;
+    }
+
+    @include respond(maxWidth768) {
+        padding-bottom: 3rem;
+    }
+}
+
+.p-top {
+    padding-top: 7rem;
+
+    @include respond(maxWidth992) {
+        padding-top: 5rem;
+    }
+
+    @include respond(maxWidth768) {
+        padding-top: 3rem;
+    }
+}
+
+.spaceL {
+    height: 8rem;
+
+    @include respond(maxWidth992) {
+        height: 3rem;
+    }
+
+    @include respond(maxWidth768) {
+        height: 2.5rem;
+    }
+}
+
+.spaceM {
+    height: 7rem;
+
+    @include respond(maxWidth992) {
+        height: 5rem;
+    }
+
+    @include respond(maxWidth768) {
+        height: 3rem;
+    }
+}
+
+.spaceS {
+    height: 2.5rem;
+
+    @include respond(maxWidth992) {
+        height: 2rem;
+    }
+
+    @include respond(maxWidth768) {
+        height: 1.5rem;
+    }
+}
+
+.sectionTitle {
+    margin-bottom: 7rem;
+}
+
+.primaryList {
+    li {
+        position: relative;
+        padding-left: 12.5px;
+
+        &:not(:last-child) {
+            padding-bottom: 1rem;
+        }
+
+        &:before {
+            content: "\f0a4";
+            @include fontClr();
+            position: absolute;
+            top: 6px;
+            left: -15px;
+            font: normal normal normal 16px/1 FontAwesome;
+        }
+    }
+}
+
+
+.colorPicker {
+    position: fixed;
+    top: 20%;
+    z-index: 99;
+    background: $colorWhite;
+    padding: 0.5rem;
+    transform: translateX(calc(-100% - 5px));
+    transition: $transition;
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    .headingSix{
+        font-size: 1.4rem;
+        text-transform: capitalize;
+    }
+    .spin {
+        position: absolute;
+        right: -3.5rem;
+        top: 0;
+        width: 3.5rem;
+        display: grid;
+        place-content: center;
+        color:$colorWhite;
+        aspect-ratio: 1 / 1;
+        background: $colorBlack;
+        cursor: pointer;
+        border-radius: 0 3rem 3rem 0;
+
+        i {
+            animation: spin 4s linear infinite;
+            font-size: $defaultFontSize;
+        }
+    }
+
+    .themeGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
+    }
+
+    button {
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--themeclr);
+        border-radius: 5px;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+
+        &:focus,
+        &:active {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+.borderLine {
+    position: relative;
+
+    &::before {
+        content: "";
+        background-size: contain;
+        width: 128px;
+        height: 9px;
+        position: absolute;
+        left: 0;
+        @include BgClr();
+        mask: url(../../images/icons/border-line.png) no-repeat center;
+        mask-size: contain;
+    }
+
+    &.center {
+        &::before {
+            transform: translateX(-50%);
+            left: 50%;
+        }
+    }
+}
+
+.owl-nav {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    .owl-next,
+    .owl-prev {
+        border: none;
+        width: 4rem;
+        aspect-ratio: 1 / 1;
+        @include BgClrOnly();
+
+        span {
+            color: $colorWhite;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .owl-next {
+        border-radius: 0 50% 50% 0;
+    }
+
+    .owl-prev {
+        border-radius: 50% 0 0 50%;
+    }
+}
+
+
+.innerHeroTab {
+    height: 25rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: "";
+        background: $colorBlack;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0.7;
+        height: 100%;
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.cta {
+    .sectionTitle {
+        margin-bottom: 4rem;
+    }
+
+    .linkWrapper {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        a {
+            &:first-child {
+                @include BtnOne();
+            }
+
+            &:last-child {
+                @include BtnThree();
+            }
+        }
+    }
+}
+
+.innerHeader {
+    padding: 7rem 0;
+    text-align: center;
+    @include bgLight();
+
+    a{
+        @include BtnOne();
+    }
+
+    .subHeading {
+        i {
+            padding-right: 3px;
+        }
+    }
+
+    .innerHeroContent {
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+
+            @include respond (maxWidth768) {
+                text-align: center;
+            }
+
+            @media screen and (min-width:1399.9px) {
+                font-size: 6.7rem;
+            }
+
+            @media screen and (min-width:992.1px) and (max-width:1199.9px) {
+                font-size: 3.6rem;
+            }
+
+            @include respond(maxWidth992) {
+                font-size: 3.6rem;
+            }
+
+            @include respond(maxWidth768) {
+                font-size: 3.6rem;
+                text-align: center;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include respond(maxWidth575) {
+                font-size: 3rem;
+            }
+
+            @media screen and (max-width:300px) {
+                font-size: 2.6rem;
+            }
+
+            span {
+                @include fontClr();
+            }
+        }
+
+        p {
+            font-size: 1.8rem;
+        }
+    }
+}

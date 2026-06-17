@@ -1,0 +1,132 @@
+@use "../abstracts" as *;
+.indiaMap{
+    background: rgba($colorDarkGray, $alpha: 0.05);
+    .headingPrimary{
+        text-align: left;
+    }
+    .note{
+        position: relative;
+        @include respond (minWidth768){
+            font-size: 2rem;
+        }
+        img{
+            width: 5rem;
+    position: absolute;
+    top: -30px;
+    z-index: 0;
+    opacity: 0.1;
+        }
+    }
+    .headingSix{
+        @include fontClr();
+        text-align: center;
+    }
+    select{
+        width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    @include fontClr();
+    font-weight: 500;
+    margin-top: 2rem;
+    @include borderClr();
+    &:focus{
+        border: 1px solid;
+    @include borderClr();
+        outline: none;
+        box-shadow: none;
+    }
+    }
+    .str0 {
+    stroke: $colorDarkGray;
+    stroke-width: 6.94488
+}
+
+.str1 {
+    stroke: #FEFEFE;
+    stroke-width: 26.4094;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.fil11{
+    fill: #f69eb6;
+    fill-rule: nonzero;
+}
+.fil12{
+    fill: #c0d264;
+    fill-rule: nonzero;
+}
+.fil14{
+    fill: #f4ba56;
+    fill-rule: nonzero;
+}
+.fil15{
+    fill: #d7c595;
+    fill-rule: nonzero;
+}
+.fil16{
+    fill: #b1acd5;
+    fill-rule: nonzero;
+}
+.fil17{
+    fill: #fcdf55;
+    fill-rule: nonzero;
+}
+text.fil9{
+    @include fillClr();
+    font-weight: bold;
+    font-size: 194.445px;
+}
+.popup {
+    background: $colorWhite;
+    margin: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    ul {
+        margin: 0;
+        padding-left: 0;
+
+
+        li {
+            @include fontClr();
+            font-weight: 500;
+            border-bottom: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            @include borderClr();
+            padding: 1rem;
+            transition: all 0.3s ease;
+            a{
+                @include fontClr();
+                display: block;
+                padding: 1rem;
+            }
+            &:hover {
+                @include BgClrOnly();
+                color: $colorWhite;
+                a{
+                    color: $colorWhite;
+                }
+            }
+            &:first-child {
+                border-top: 1px solid;
+                @include borderClr();
+            }
+        }
+    }
+}
+#svg-tooltip {
+        position: absolute;
+        display: none;
+        background: rgba(0,0,0,0.8);
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 1000;
+        transition: opacity 0.1s ease;
+    }
+}
